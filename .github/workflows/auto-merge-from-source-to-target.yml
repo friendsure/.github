@@ -1,0 +1,33 @@
+# .github/.github/workflows/auto-merge.yml
+name: Auto Merge to Target Branch
+
+on:
+  workflow_call:
+    inputs:
+      source_branch:
+        required: true
+        type: string
+      target_branch:
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin ${{ inputs.target_branch }}:${{ inputs.target_branch }}
+          git checkout ${{ inputs.target_branch }}
+          git merge origin/${{ inputs.source_branch }} --no-edit || true
+          git push origin ${{ inputs.target_branch }}
