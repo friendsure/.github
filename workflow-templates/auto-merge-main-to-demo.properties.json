@@ -1,0 +1,6 @@
+{
+  "name": "Auto Merge Main to Demo",
+  "description": "Automatically merges changes from the main branch to the demo branch whenever changes are pushed to main.",
+  "iconName": "octicon git-merge",
+  "categories": ["Automation", "Continuous Integration"]
+}
