@@ -1,5 +1,5 @@
 ---
-name: Custom issue template
+name: Repository Creation Request
 about: Describe this issue template's purpose here.
 title: ''
 labels: ''
