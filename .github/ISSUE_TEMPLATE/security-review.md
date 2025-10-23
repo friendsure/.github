@@ -7,14 +7,6 @@ assignees: ''
 
 ---
 
----
-name: Security Review
-about: Conduct a security review for new features, integrations, or significant changes.
-title: "[Security Review] <Feature or Module Name>"
-labels: ["security-review", "pending-approval"]
-assignees: []
----
-
 ## 🛡️ Security Review Request
 
 This issue serves as the official record of the security review for a new feature, change, or integration.  
